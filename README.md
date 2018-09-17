@@ -1,0 +1,3 @@
+# JS
+
+Simple JS exercises
