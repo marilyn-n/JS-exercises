@@ -27,3 +27,10 @@ const strOption2 = ['Your', randomWords(bodyWords), 'is more', randomWords(adjec
 const strOption3 = "Your" + ' ' + randomWords(bodyWords) + ' ' + randomWords(adjectives) + ' ' + 'than a' + ' ' + randomWords(animals2) + ' ' + '\'s' + randomWords(animalBodyParts)
 
 console.log(str)
+
+// Joining Numbers
+
+const numbers3 = [3, 2, 1]
+
+const myStr = `${numbers3[0]} is bigger than ${numbers3[1]} is bigger than ${numbers3[2]}`
+console.log(myStr)
