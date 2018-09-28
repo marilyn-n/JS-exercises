@@ -23,5 +23,7 @@ const animalBodyParts = ['ears', 'tale', 'paw', 'horn']
 const randomWords = arr => arr[Math.floor(Math.random() * arr.length)]
 
 const str = `Your ${randomWords(bodyWords)} is more ${randomWords(adjectives)} than a ${randomWords(animals2)}’s ${randomWords(animalBodyParts)}.`
+const strOption2 = ['Your', randomWords(bodyWords), 'is more', randomWords(adjectives), 'than a', randomWords(animals2), '\'s' ,randomWords(animalBodyParts)].join(' ')
+const strOption3 = "Your" + ' ' + randomWords(bodyWords) + ' ' + randomWords(adjectives) + ' ' + 'than a' + ' ' + randomWords(animals2) + ' ' + '\'s' + randomWords(animalBodyParts)
 
 console.log(str)
