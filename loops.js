@@ -39,26 +39,6 @@ tmibzfr
 povxrjq
 */
 
-// const hackerSpeaker = (input) => {
-//   let output = ''
-
-//   for (let i = 0; i < input.length; i++) {
-//     if (input[i] === 'a') {
-//       output += '4'
-//     } else if(input[i] === 'e') {
-//       output += '3'
-//     } else if(input[i] === 'i') {
-//       output += '1'
-//     } else if(input[i] === 'o') {
-//       output += '0'
-//     } else {
-//       input[i]
-//     }
-//   }
-//   return output
-// }
-
-// console.log(hackerSpeaker('javascript is awesome'))
 const hackerSpeaker = (input) => {
   let output = ''
 
@@ -81,3 +61,5 @@ const hackerSpeaker = (input) => {
 
 console.log(hackerSpeaker('javascript is awesome my friend'))
 
+// expected output 
+// j4v4scr1pt 1s 4w3som3 my fr13nd
