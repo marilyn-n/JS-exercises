@@ -38,3 +38,46 @@ bgxamid
 tmibzfr
 povxrjq
 */
+
+// const hackerSpeaker = (input) => {
+//   let output = ''
+
+//   for (let i = 0; i < input.length; i++) {
+//     if (input[i] === 'a') {
+//       output += '4'
+//     } else if(input[i] === 'e') {
+//       output += '3'
+//     } else if(input[i] === 'i') {
+//       output += '1'
+//     } else if(input[i] === 'o') {
+//       output += '0'
+//     } else {
+//       input[i]
+//     }
+//   }
+//   return output
+// }
+
+// console.log(hackerSpeaker('javascript is awesome'))
+const hackerSpeaker = (input) => {
+  let output = ''
+
+  for (let i = 0; i < input.length; i++) {
+    const element = input[i]
+    if (element === 'a') {
+      output += '4'
+    } else if (element === 'e') {
+      output += '3'
+    } else if (element === 'i') {
+      output += '1'
+    } else if (element === '0') {
+      output += '0'
+    } else {
+      output += element
+    }
+  }
+  return output
+}
+
+console.log(hackerSpeaker('javascript is awesome my friend'))
+
