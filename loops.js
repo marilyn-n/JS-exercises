@@ -17,3 +17,24 @@ console.log(myAnimals(animals))
 
 // expected output
 // ['Awesome Cat', 'Awesome Fish', 'Awesome Lemur', 'Awesome Komodo Dragon']
+
+// Random String Generator
+const words = () => {
+  let randomString = ''
+  const alphabet = 'abcdefghijklmnopqrstuvwxyz'
+
+  while (randomString.length <= 6) {
+    const randomLetter = alphabet[Math.floor(Math.random(alphabet) * alphabet.length)]
+    randomString += randomLetter
+  }
+    return randomString
+  }
+
+console.log(words())
+
+// expected output
+/* 
+bgxamid
+tmibzfr
+povxrjq
+*/
