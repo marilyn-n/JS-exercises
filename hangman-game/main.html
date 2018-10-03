@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Hangman</h1>
+  <script>
+    // #1 random word
+
+    const words = ['javascript', 'programming', 'code', 'computer']
+    
+    const randomWord = words[Math.floor(Math.random(words) * words.length)]
+    
+    // #2 remain letters
+
+    const answearArray = []
+    
+    for (let i = 0; i < randomWord.length; i++) {
+      answearArray[i] = '_'
+    }
+
+    const remainLetters = randomWord.length
+
+    alert(answerArray.join(" "));
+
+    while (remainLetters > 0) {
+      const guess = prompt('Guess a letter, or click Cancel to stop playing.')
+      if (guess === null) {
+        alert()
+
+      }
+    }
+  </script>
+</body>
+</html>
+
+
