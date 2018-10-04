@@ -1,41 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>Hangman Game</title>
 </head>
-<body>
-  <h1>Hangman</h1>
+
+<body style="background-image: url('./bg.png');">
   <script>
     // #1 random word
 
     const words = ['javascript', 'programming', 'code', 'computer']
-    
+
     const randomWord = words[Math.floor(Math.random(words) * words.length)]
-    
+
     // #2 remain letters
 
-    const answearArray = []
-    
+    const answerArray = []
+
     for (let i = 0; i < randomWord.length; i++) {
-      answearArray[i] = '_'
+      answerArray[i] = '_'
     }
 
-    const remainLetters = randomWord.length
-
-    alert(answerArray.join(" "));
+    let remainLetters = randomWord.length
 
     while (remainLetters > 0) {
-      const guess = prompt('Guess a letter, or click Cancel to stop playing.')
+      alert(answerArray.join(" "));
+      let guess = prompt('Guess a letter, or click Cancel to stop playing.')
       if (guess === null) {
-        alert()
-
+        break;
+      } else if (guess.length !== 1) {
+        alert('Please enter a single letter.')
+      } else {
+        for (let j = 0; j < randomWord.length; j++) {
+          if (randomWord[j] === guess) {
+            answerArray[j] = guess
+            remainLetters--
+          }
+        }
       }
     }
+
+    alert(answerArray.join(" "));
+    alert("Good job! The answer was " + randomWord);
   </script>
 </body>
+
 </html>
-
-

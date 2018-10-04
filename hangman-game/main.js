@@ -14,10 +14,10 @@ for (let i = 0; i < randomWord.length; i++) {
 
 const remainLetters = randomWord.length
 
-// alert(answerArray.join(" "));
 
 while (remainLetters > 0) {
-  const guess = prompt('Guess a letter, or click Cancel to stop playing.')
+  alert(answerArray.join(" "));
+  let guess = prompt('Guess a letter, or click Cancel to stop playing.')
   if (guess === null) {
     break;
   } else if (guess.length !== 1) {
@@ -31,3 +31,7 @@ while (remainLetters > 0) {
     }
   }
 }
+
+
+alert(answerArray.join(" "));
+alert("Good job! The answer was " + word);
