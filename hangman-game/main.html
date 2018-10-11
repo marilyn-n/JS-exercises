@@ -8,11 +8,19 @@
   <title>Hangman Game</title>
 </head>
 
-<body style="background-image: url('./bg.png');">
+<body style="background-image: url('./img/bg.png');">
   <script>
     // #1 random word
 
-    const words = ['javascript', 'programming', 'code', 'computer']
+    const words = [
+      'javascript',
+      'programming',
+      'code',
+      'computer',
+      'internet',
+      'language',
+      'wifi'
+      ]
 
     const randomWord = words[Math.floor(Math.random(words) * words.length)]
 
@@ -25,11 +33,16 @@
     }
 
     let remainLetters = randomWord.length
+    let guesses = 0
 
-    while (remainLetters > 0) {
-      alert(answerArray.join(" "));
+    while (remainLetters > 0 ) {
+      guesses++
+      alert(answerArray.join(' '));
       let guess = prompt('Guess a letter, or click Cancel to stop playing.')
-      if (guess === null) {
+      if (guesses >=3) {
+        break;
+      }
+      else if (guess === null) {
         break;
       } else if (guess.length !== 1) {
         alert('Please enter a single letter.')
@@ -42,6 +55,12 @@
         }
       }
     }
+
+// Our Hangman game gives a player unlimited guesses. Add a variable to track the number of guesses 
+// and end the game if the player runs out of guesses.
+
+// Hint: Check this variable in the same while loop that checks whether remainingLetters > 0.
+//  As we did in Chapter 2, you can use && to check whether two Boolean conditions are true.)
 
     alert(answerArray.join(" "));
     alert("Good job! The answer was " + randomWord);
