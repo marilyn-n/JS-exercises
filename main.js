@@ -44,3 +44,29 @@ add(777, multiply(36325,9824))
 
 // Using only these two functions, solve this simple mathematical problem:
 // 36325 * 9824 + 777
+
+const areArraysSame = (arr1, arr2) => {
+  if (arr1.join('') === arr2.join('')) {
+    return true
+  } else {
+    return false
+  }
+}
+
+console.log(areArraysSame([1, 2, 3, 0], [1, 2, 3])); // false
+console.log(areArraysSame([1, 2, 3], [1, 2, 3]));  // true
+console.log(areArraysSame([1, 2, 44], [1, 2, 44]));  // true
+console.log(areArraysSame([0, 8, 3], [1, 2, 3]));  // false
+console.log(areArraysSame([0, 1, 2], [1, 0, 2]));  // false
+
+
+
+ 
+
+// expected output
+// areArraysSame([1, 2, 3], [4, 5, 6]);
+// false
+
+
+// const allNumbs = arr1.map(num => num)
+//   const secondArray = arr2.map(num => num)
