@@ -26,19 +26,21 @@ if( age >= 13){
 
 // Random insult generator
 
- const randomBodyParts = ['Face', 'Nose', 'Hair', 'Mouth']
+const randomBodyParts = ['Face', 'Nose', 'Hair', 'Mouth']
+const randomAdjectives = ['Smelly', 'Boring', 'Stupid', 'Dirty']
+const randomWords = ['Fly', 'Marmot', 'Stick', 'Monkey', 'Rat', 'Bug']
 
- const randomAdjectives = ['Smelly', 'Boring', 'Stupid', 'Dirty']
-
- const randomWords = ['Fly', 'Marmot', 'Stick', 'Monkey', 'Rat', 'Bug']
-
-// Pick a random body part from the randomBodyParts array:
-const randomBodyPart = randomBodyParts[Math.floor(Math.random() * randomBodyParts.length)]
-// Pick a random adjective from the randomAdjectives array:
-const randomAdjective = randomAdjectives[Math.floor(Math.random() * randomAdjectives.length)]
-// Pick a random word from the randomWords array:
-const randomWord = randomWords[Math.floor(Math.random() * randomWords.length)]
-// Join all the random strings into a sentence:
-const randomInsult = `Your ${randomBodyPart} is like a ${randomAdjective} ${randomWord} !!!`
+const insultGenerator = (arr) => arr[Math.floor(Math.random() * arr.length)]
+const randomInsult = `Your ${insultGenerator(randomBodyParts)} is like a ${insultGenerator(randomAdjectives)} ${insultGenerator(randomWords)} !!!`
 
 console.log(randomInsult)
+
+const add = (x, y) => x + y
+
+const multiply = (n, m) => n * m 
+
+// console.log(add(777))
+add(777, multiply(36325,9824))
+
+// Using only these two functions, solve this simple mathematical problem:
+// 36325 * 9824 + 777
