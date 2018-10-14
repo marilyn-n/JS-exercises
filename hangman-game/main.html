@@ -10,57 +10,74 @@
 
 <body style="background-image: url('./img/bg.png');">
   <script>
-    // #1 random word
-
-    const words = [
-      'javascript',
-      'programming',
-      'code',
-      'computer',
-      'internet',
-      'language',
-      'wifi'
-      ]
-
-    const randomWord = words[Math.floor(Math.random(words) * words.length)]
-
-    // #2 remain letters
-
-    const answerArray = []
-
-    for (let i = 0; i < randomWord.length; i++) {
-      answerArray[i] = '_'
+    
+    const pickWord = () => {
+      // Return a random word
+      const words = ['javascript', 'programming', 'code', 'computer']
+      return words[Math.floor(Math.random() * words.length)] 
     }
 
-    let remainLetters = randomWord.length
-    let guesses = 20
+    const setupAnswerArray = (word) => {
+      // Return the answer array
+      let answerArray = []
+      for (let i = 0; i < word.length; i++) {
+        answerArray[i] = '_'
+      }
+      return answerArray
+    }
 
-    while (remainLetters > 0 && guesses > 0) {
-      alert(answerArray.join(' '));
-      let guess = prompt('Guess a letter, or click Cancel to stop playing.')
+    const showPlayerProgress = (answerArray) => {
+      // Use alert to show the player their progress
+      return alert(answerArray.join(' '))
+    }
+
+    const getGuess = _ => {
+      // Use prompt to get a guess
+      return prompt('Guess a letter, or click Cancel to stop playing.')
+    }
+
+    const updateGameState = (guess, word, answerArray) => {
+      // Update answerArray and return a number showing how many
+      // times the guess appears in the word so remainingLetters
+      // can be updated
+      let remainingLetters = 0
+      for (let j = 0; j < word.length; j++) {
+        if (word[j] === guess) {
+          answerArray[j] = guess
+          remainingLetters++
+        }
+      }
+      return remainingLetters
+    }
+
+    const showAnswerAndCongratulatePlayer = (answerArray, word) => {
+      // Use alert to show the answer and congratulate the player
+      showPlayerProgress(answerArray)
+      alert(`Good job! The answer was ${answerArray.join(' ')}`)
+    }
+
+    const word = pickWord()
+
+    const answerArray = setupAnswerArray(word)
+
+    let remainingLetters = word.length
+
+    while (remainingLetters > 0) {
+      showPlayerProgress(answerArray)
+      const guess = getGuess()
       if (guess === null) {
         break;
       } else if (guess.length !== 1) {
         alert('Please enter a single letter.')
       } else {
-        guesses--
-        guess = guess.toLocaleLowerCase()
-        for (let j = 0; j < randomWord.length; j++) {
-          if (randomWord[j] === guess && answerArray[j] === '_') {
-            answerArray[j] = guess
-            remainLetters--
-          }
-        }
+
+       let correctGuesses = updateGameState(guess, word, answerArray)
+        remainingLetters -= correctGuesses
       }
     }
 
-    if (guesses > 0) {
-      alert('Good job the answer was ' + randomWord) 
-    } else {
-      alert('Too bad, the answer was ' + randomWord)
-    }
-      
-    alert(answerArray.join(" "));
+    showAnswerAndCongratulatePlayer(answerArray)
+
   </script>
 </body>
 
